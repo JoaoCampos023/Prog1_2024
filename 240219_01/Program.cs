@@ -37,4 +37,19 @@ nome = Console.ReadLine();
 string resultado = $"Oi, {nome}! Pare de Jaguarice!";
 Console.WriteLine(resultado);
 
-// novo comentario //
+// novo comentario 04/03/2024 //
+
+// Substituindo conteudo de string
+
+string nomeCompleto = "Joao Vitor Campos";
+nomeCompleto = nomeCompleto.Replace("Vitor", "Sabido");
+Console.WriteLine(nomeCompleto);
+
+// Comparação de Strings
+
+bool isNomeEqual = (nomeCompleto == "Joao Vitor Campos");
+
+bool isNomeEqual2 = string.Equals(nomeCompleto, "Joao Sabido Campos");
+
+Console.WriteLine($"Primeiro resultado: {isNomeEqual}");
+Console.WriteLine($"Segundo resultado: {isNomeEqual2}");
