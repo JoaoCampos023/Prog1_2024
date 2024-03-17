@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02\\240311_02.csproj",
+      "projectUniqueName": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02 - Atv Aula 4\\240311_02.csproj",
       "projectName": "240311_02",
-      "projectPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02\\240311_02.csproj",
+      "projectPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02 - Atv Aula 4\\240311_02.csproj",
       "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02\\obj\\",
+      "outputPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240311_02 - Atv Aula 4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joaov\\AppData\\Roaming\\NuGet\\NuGet.Config"
