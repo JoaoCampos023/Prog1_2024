@@ -1,0 +1,15 @@
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\bin\Debug\net8.0\testes.exe
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\bin\Debug\net8.0\testes.deps.json
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\bin\Debug\net8.0\testes.runtimeconfig.json
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\bin\Debug\net8.0\testes.dll
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\bin\Debug\net8.0\testes.pdb
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.AssemblyInfoInputs.cache
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.AssemblyInfo.cs
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.csproj.CoreCompileInputs.cache
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.sourcelink.json
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.dll
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\refint\testes.dll
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.pdb
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\testes.genruntimeconfig.cache
+C:\Users\joaov\Documents\Programação 2024\Exercicios\testes\obj\Debug\net8.0\ref\testes.dll
