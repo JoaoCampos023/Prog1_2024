@@ -21,7 +21,7 @@ namespace _240318_01___Aula_5.Models
         public List<Address> Addresses = new List<Address>();
 
         //Metodos
-        public bool Validete()
+        public bool Validate()
         {
             return true;
         }
