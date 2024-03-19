@@ -1,0 +1,26 @@
+1) Fazer Checkout em seu repo local para branch main
+R: git checkout main
+
+2) Baixar as atualizaçoes do repo remoto em main para o repo local
+R: git pull origin main
+
+3) Crie uma nova branch a partir de main parar a aula de hoje, seguindo padrão de nomenclatura.
+R: git checkout -b feature/"nome que quiser"
+
+4) Criar novo codigo/pasta para o codigo
+R: dotnet new console -n "noem que quiser"
+
+5) Adicione esta alteração ao rastreio do git
+R: git add . 
+
+6) crie um checkpoit
+R: git commit -m "Oque quiser"
+
+7) Envie a nova branch local para o repo remoto.
+R: git push origin feature/"o nome que colocou"
+
+8) Verificar status.
+R: git status
+
+9) Antes de enviar para repo remoto. Fazer um:
+R: git commit -m "o que quiser"

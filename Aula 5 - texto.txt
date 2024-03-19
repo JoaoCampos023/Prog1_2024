@@ -1,0 +1,21 @@
+Desenvolvimento de Sistemas OO:
+OO: Orientação a Objetos
+Paradigma: forma de fazer algo.
+OOP: Object-Oriented Programming.
+
+Classe x Objeto:
+
+- Classe: 
+código definido com a palavra-chave class.
+Formada por propriedades ou atributos e funções ou métodos que compõem os membros da classe.
+
+- Objetos:
+	Objeto é uma instancia de uma classe armazenado na memória do computador.
+	Variável que possibilita o acesso aos métodos e propriedades especificas pela classe.
+	Ao encerar o programa, o objeto é eliminado da memória, mas a classe permanecera especificada no código fonte do programa.
+
+- Os objetos possuem o formato especificado pela classe, porém, cada um deles pode adicionar valores diferentes em suas propriedades ocasionando comportamento diferentes em seus métodos.
+
+- Objetos de Negócios:
+	Business Objects são as classes projetadas para solucionar problemas de um determinado domínio de aplicação do software.
+	Certamente teríamos uma definição de classe Consumidor em um sistema comercial, contendo nome e e-mail como propriedades, por exemplo.
