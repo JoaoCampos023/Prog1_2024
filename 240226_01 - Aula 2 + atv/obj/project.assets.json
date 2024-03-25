@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\240226_01.csproj",
+      "projectUniqueName": "C:\\Users\\joaov\\OneDrive\\Documentos\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\240226_01.csproj",
       "projectName": "240226_01",
-      "projectPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\240226_01.csproj",
+      "projectPath": "C:\\Users\\joaov\\OneDrive\\Documentos\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\240226_01.csproj",
       "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\obj\\",
+      "outputPath": "C:\\Users\\joaov\\OneDrive\\Documentos\\Programação 2024\\Exercicios\\240226_01 - Aula 2 + atv\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joaov\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

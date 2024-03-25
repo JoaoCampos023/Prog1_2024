@@ -69,3 +69,17 @@ double myDouble = 5d;
 decimal myDecimal = 7m;
 int myInteger = 0;
 
+// BOOL 
+
+bool estaChovendo = true; // Declaração e atribuição de uma variável booleana
+bool usuarioLogado = false;
+
+if (estaChovendo) {
+    Console.WriteLine("Você precisa de um guarda-chuva!"); // Se estiver chovendo, exibe essa mensagem
+}
+
+if (usuarioLogado) {
+    Console.WriteLine("Bem-vindo de volta!"); // Se o usuário estiver logado, exibe essa mensagem
+} else {
+    Console.WriteLine("Por favor, faça login."); // Se o usuário não estiver logado, exibe essa mensagem
+}
