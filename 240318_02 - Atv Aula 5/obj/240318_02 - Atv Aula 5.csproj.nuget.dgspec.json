@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj": {}
+    "C:\\Users\\João - Trabalhos\\Desktop\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj": {
+    "C:\\Users\\João - Trabalhos\\Desktop\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj",
+        "projectUniqueName": "C:\\Users\\João - Trabalhos\\Desktop\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj",
         "projectName": "240318_02 - Atv Aula 5",
-        "projectPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj",
-        "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaov\\Documents\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\obj\\",
+        "projectPath": "C:\\Users\\João - Trabalhos\\Desktop\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\240318_02 - Atv Aula 5.csproj",
+        "packagesPath": "C:\\Users\\João - Trabalhos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\João - Trabalhos\\Desktop\\Programação 2024\\Exercicios\\240318_02 - Atv Aula 5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joaov\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\João - Trabalhos\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
