@@ -1,1 +1,52 @@
 PROGRAMAÇÃO ORIENTADA A OBJETOS:
+
+CONSTRUIUNDO UMA CLASSE COM METODOS:
+Adicione um Validade(), a classe Custumer.
+
+->      public bool Validate()
+        {
+           var isValid = true;
+           if (string.IsNullOrWhiteSpace(Name))
+           {
+               isValid = false;
+           }
+           if (string.IsNullOrWhiteSpace(EmailAddress))
+           {
+               isValid = false;
+           }
+           return isValid;
+        } 
+
+TERMOS: 
+
+ASSINATURA DO METODO:
+
+Composto pelo nome e conjunto de parametros e seus tipos.
+Não inclui o tipo de Retorno.
+Utilizado pelo sistema para orientar as chamadas de funções.
+Cada asssinatura de um metodo na classe deve ser unico.
+Mas se possuirmos metodos com parametros diferentes eles podem ter o mesmo nome.
+
+SOBRECARGA / OVERLOADING: 
+
+Usado para descrever metodos que possuem o mesmo nome com diferente parametros.
+Metodos que são especificos com o mesmo nome, devem prover variações da mesma funcionalidade.
+No exemplo, um metodo retorna um Custumer, enquanto o outro retorna uma coleção de consumidores List<Custumer>.
+Utilize void quando não houver nada a retornar.
+
+CONTRACT:
+
+As especificações dos modificadores de acesso definem o contrato da classe. Quais atributos e metodos estarão visiveis,
+para quem e em que nivel de acesso.
+
+-> Pubic (publico)
+-> Private (privado)
+-> 
+
+CONSTRUTORES:
+
+Um tipo especial de metodo com o mesmo nome da classe.
+Geralmente definidos no primeiro paragrafo da classe.
+É o metodo executado quando um objeto do tipo da classe é criado.
+Um metodo construtor sem parametros é definido como um Construtor padrão (default COnstructor).
+Podemos fazer a Sobrecarga dos Construtores.
