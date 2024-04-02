@@ -16,7 +16,7 @@ casa1.BusinessType = BusinessType.Venda;
 
 //Casa de Praia
 
-casa2.ImovelId = 1;
+casa2.ImovelId = 2;
 casa2.Nome = "Casa de Praia";
 casa2.Discretion = "Uma bela casa beira Mar";
 casa2.Valor = 35000;
@@ -26,7 +26,7 @@ casa2.BusinessType = BusinessType.Location;
 
 // Casa no Interior / Fazenda
 
-casa3.ImovelId = 1;
+casa3.ImovelId = 3;
 casa3.Nome = "Casa Rural";
 casa3.Discretion = "Uma bela Fazenda no Interior";
 casa3.Valor = 5000000;
