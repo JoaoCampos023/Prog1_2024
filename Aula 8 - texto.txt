@@ -1,0 +1,23 @@
+- Pesquisa : -> Design Pattern Solid;
+
+
+PROGRAMAÇÃO ORIENTADA A OBJETOS:
+
+BORDÕES:
+
+- YAGNI: Não adicione codigo em suas classes ate que sejam realmente necessarios;
+- KISS: Matenha as coisas simples. Se esta complicado provavelmente esta errado;
+- DRY: Escreva classes e metodos de modo que eles possam ser reaproveitados;
+
+- POCO: Plain | Old | C# | Object
+
+METODOS:
+
+- OS metodos retrive() e save() tem mais relação com a camada de dados;
+- Podemos separa-los em uma classe especifica para lidar com o Repositorio de Dados;
+
+- O Padrão Repositorio: Podemos aplicar o conceito do padrão de Design Repositorio para as demais classes;
+
+- ORM: Object | Relational | Mapping = Framework;
+
+
