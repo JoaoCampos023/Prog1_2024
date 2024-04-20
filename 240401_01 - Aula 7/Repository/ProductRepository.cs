@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using _240401_01___Aula_7.Date;
+using _240401_01___Aula_7.Data;
 using _240401_01___Aula_7.Models;
 
 namespace _240401_01___Aula_7.Repository
@@ -12,12 +11,12 @@ namespace _240401_01___Aula_7.Repository
     {
         public void Save(Product product)
         {
-            DateSet.Products.Add(product);
+            DataSet.Products.Add(product);
         }
 
         public Product Retrieve(int id)
         {
-            foreach(var p in DateSet.Products)
+            foreach(var p in DataSet.Products)
             {
                 if(p.ProductId == id)
                 return p;

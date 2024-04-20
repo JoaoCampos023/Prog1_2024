@@ -1,0 +1,185 @@
+Desenvolvimento de Sistemas OO:
+OO: Orientação a Objetos
+Paradigma: forma de fazer algo.
+OOP: Object-Oriented Programming.
+
+Classe x Objeto:
+
+- Classe: 
+código definido com a palavra-chave class.
+Formada por propriedades ou atributos e funções ou métodos que compõem os membros da classe.
+
+- Objetos:
+	Objeto é uma instancia de uma classe armazenado na memória do computador.
+	Variável que possibilita o acesso aos métodos e propriedades especificas pela classe.
+	Ao encerar o programa, o objeto é eliminado da memória, mas a classe permanecera especificada no código fonte do programa.
+
+- Os objetos possuem o formato especificado pela classe, porém, cada um deles pode adicionar valores diferentes em suas propriedades ocasionando comportamento diferentes em seus métodos.
+
+- Objetos de Negócios:
+	Business Objects são as classes projetadas para solucionar problemas de um determinado domínio de aplicação do software.
+	Certamente teríamos uma definição de classe Consumidor em um sistema comercial, contendo nome e e-mail como propriedades, por exemplo.
+
+
+PROGRAMAÇÃO ORIENTADA A OBJETOS:
+
+-> Uma abordagem para projetar e construir aplicações que são:
+   - Flexiveis;
+   - Naturais;
+   - Bem elaboradas;
+   - Testaveis;
+
+
+INDENTIFICANDO CLASSES DE REQUESITOS:
+
+-> Você recebeu uma solicitação por e-mail de uma amiga veterinária informando que está com problemas para gerenciar 
+os atendimentos dos pets na mensagem ela diz que gostaria de ter registro dos animais que precisa também dos dados dos parceiros
+veterinários que atendem no centro clínico para poder saber quais médicos atenderam quais animais em um determinado período de tempo 
+ou até mesmo registrar quais procedimentos foram realizados com os animais nos últimos atendimentos.
+
+-> Primeiro Passo: inicie os nomes: Quais são as palavras-chaves informadas no requisitos que são essenciais a resolver
+ 				   o probleminha de nossa amiga veterinaria.
+
+- Gerencia, atendimento dos pets, registros dos animais, parceiros veterinarios, Periodo de tempo (atendimento).
+
+-> Segundo Passo: Defina os membros apropriados: - Quais são as Propriedades (dados) e os Métodos (operações) fundamentais 
+						para Iniciar a construção deste software?: 
+						- Descreva quais as propriedades necessárias 
+						para sua proposta pensando nas seguintes entidades:
+
+
+pets/Animais: nome, peso, raça, especie, porte, data de nascimento, responsavel, telefone_responsavel.
+Veterinario: nome, CPF, genero, email, telefone, CRM.
+Atendimento: horario, tempo de atendimento, tipo de serviços (banho, tosa, atendimento clinico, sacrificio), veterinario, Animal, preço.
+Clinica: tipo de local, endereço (rua, numero, bairro, cep, cidade, UF).
+
+-> O EFEITO TEMPO:
+  
+   - Considere a efeito TEMPO em sua aplicação, com o passar dos anos es dados podem sofrer alterações, 
+   o responsável por um animal pode mudar, ut telefone ou e-mail por exemplo.
+
+   - O TEMPO é uma quarta dimensão a ser considerada, se algum dado do veterinária, da clinica ou do animal for alterado,
+   isto influenciarla nos dados armazenados de atendimento?
+
+   - Utiliza sempre as conceitor de abstração e encapsulaments para responder a estas perguntas!
+
+-> ABSTRAÇÃO:
+
+   - O processo de abstração dependerá dos requisitos da aplicação. Em nosso caso, temos a ENTIDADE Veterinário,
+   onde far-se necessário registrar poucos dedos (Nome, Email, Telefone, CRM) devido ao escopo reduzido do problema, mas,
+   se estivéssemos modelando am sistema mais robusto para aplicações diversas, certamente precisaríamos de mais informações sob
+   o vererinário, como endereço, especialidade, etc.
+
+   - É o processo de definir classes simplificando a realidade, ignorando detalhes desnecessários e focando apenas no que é
+   relevante so escopo da aplicação.
+
+   - É um dos pilares da POO/OOP;
+
+-> ENACPSULAMENTO:
+ 
+   - Outro pilar da programação OO.
+   
+   - Tecnica para 'esconder' os dados e os detalhes da implementação em uma classe.
+ 
+   - Utilizado para garantir que os outros codigos do sistema não se preocupem em saber os detalhes da implementação.
+
+   - Estas propriedades são disponibilizadas para o resto do sistema 
+
+
+---------------------------------------------------
+
+var c1 = new custumer();
+c1.FirstName = "Bilbo";
+
+var c2 = c1;
+c2.FirstName = "Frodo";
+
+---------------------------------------------------
+
+STATIC:
+
+- O modificador static declara um membro que pertence a classe em si mesma e não ao objeto.
+- Util para rastrear informações compartilhadas emtre todas as instancias do objeto daquele tipo.
+- Para acessar atributos estaticos referenciamos a tipo propriedade.
+
+
+----------------------------------------------------
+
+CONSTRUIUNDO UMA CLASSE COM METODOS:
+Adicione um Validade(), a classe Custumer.
+
+->      public bool Validate()
+        {
+           var isValid = true;
+           if (string.IsNullOrWhiteSpace(Name))
+           {
+               isValid = false;
+           }
+           if (string.IsNullOrWhiteSpace(EmailAddress))
+           {
+               isValid = false;
+           }
+           return isValid;
+        } 
+
+TERMOS: 
+
+ASSINATURA DO METODO:
+
+Composto pelo nome e conjunto de parametros e seus tipos.
+Não inclui o tipo de Retorno.
+Utilizado pelo sistema para orientar as chamadas de funções.
+Cada asssinatura de um metodo na classe deve ser unico.
+Mas se possuirmos metodos com parametros diferentes eles podem ter o mesmo nome.
+
+SOBRECARGA / OVERLOADING: 
+
+Usado para descrever metodos que possuem o mesmo nome com diferente parametros.
+Metodos que são especificos com o mesmo nome, devem prover variações da mesma funcionalidade.
+No exemplo, um metodo retorna um Custumer, enquanto o outro retorna uma coleção de consumidores List<Custumer>.
+Utilize void quando não houver nada a retornar.
+
+CONTRACT:
+
+As especificações dos modificadores de acesso definem o contrato da classe. Quais atributos e metodos estarão visiveis,
+para quem e em que nivel de acesso.
+
+-> Pubic (publico)
+-> Private (privado)
+-> Protected (Protegido)
+-> Internal (Internos)
+-> Protected Internal (Internos Protegidos)
+
+CONSTRUTORES:
+
+Um tipo especial de metodo com o mesmo nome da classe.
+Geralmente definidos no primeiro paragrafo da classe.
+É o metodo executado quando um objeto do tipo da classe é criado.
+Um metodo construtor sem parametros é definido como um Construtor padrão (default COnstructor).
+Podemos fazer a Sobrecarga dos Construtores.
+
+
+----------------------------------------------------------
+
+BORDÕES:
+
+- YAGNI: Não adicione codigo em suas classes ate que sejam realmente necessarios;
+- KISS: Matenha as coisas simples. Se esta complicado provavelmente esta errado;
+- DRY: Escreva classes e metodos de modo que eles possam ser reaproveitados;
+
+- POCO: Plain | Old | C# | Object
+
+METODOS:
+
+- OS metodos retrive() e save() tem mais relação com a camada de dados;
+- Podemos separa-los em uma classe especifica para lidar com o Repositorio de Dados;
+
+- O Padrão Repositorio: Podemos aplicar o conceito do padrão de Design Repositorio para as demais classes;
+
+- ORM: Object | Relational | Mapping = Framework;
+
+------------------------------------------------------------
+
+- Pesquisa : -> Design Pattern Solid;
+
+------------------------------------------------------------

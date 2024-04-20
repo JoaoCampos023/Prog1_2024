@@ -13,7 +13,7 @@ namespace _240401_01___Aula_7.Models
     }
     public class Address
     {
-        public int Id { get; set; }
+        public int AddressId { get; set; }
         public AddressType Type { get; set; }
         public string Street { get; set; }
         public string District { get; set; }
