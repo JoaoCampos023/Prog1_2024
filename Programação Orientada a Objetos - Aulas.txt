@@ -181,5 +181,23 @@ METODOS:
 ------------------------------------------------------------
 
 - Pesquisa : -> Design Pattern Solid;
+- Pesquisa : -> Arquitetura MVC; [ M = Models, V = Views, C = Controller];
+
+TAREFA:
+
+- Implementar um algoritmo de busca na classe repository que permita encontrar consumidores contendo em seu nome ao menos 4 carcteres 
+digitados pelo usuario;
 
 ------------------------------------------------------------
+
+
+- Relacionamento: Define como o objeto interage e trabalha para realização de operações no aplicativo;
+
+- Mantra: Alta coesão e baixa acoplamento;
+
+- Models: 1: Agregação; [ Não Precisa Ter ]
+          2: Composição; [ Precisa Ter ]
+
+
+--------------------------------------------------------
+
