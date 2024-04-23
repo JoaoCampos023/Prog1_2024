@@ -12,3 +12,4 @@ C:\Users\424072\Documents\Programação 2024\Exercicios\240401_01 - Aula 7\obj\D
 C:\Users\424072\Documents\Programação 2024\Exercicios\240401_01 - Aula 7\obj\Debug\net7.0\240401_01 - Aula 7.pdb
 C:\Users\424072\Documents\Programação 2024\Exercicios\240401_01 - Aula 7\obj\Debug\net7.0\240401_01 - Aula 7.genruntimeconfig.cache
 C:\Users\424072\Documents\Programação 2024\Exercicios\240401_01 - Aula 7\obj\Debug\net7.0\ref\240401_01 - Aula 7.dll
+C:\Users\424072\Documents\Programação 2024\Exercicios\240401_01 - Aula 7\obj\Debug\net7.0\240401_01 - Aula 7.sourcelink.json

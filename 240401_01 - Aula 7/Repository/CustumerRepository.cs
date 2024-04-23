@@ -25,5 +25,10 @@ namespace _240401_01___Aula_7.Repository
 
             return null;
         }
+
+        public List<Custumer> Retrieve()
+        {
+            return DataSet.Custumers;
+        }
     }
 }
