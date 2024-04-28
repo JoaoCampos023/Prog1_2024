@@ -13,6 +13,7 @@ namespace _240401_01___Aula_7.Data
         public static List<Product> Products { get; set; }
         public static List<Order> Orders { get; set; }
         public static List<OrderItem> OrderItems { get; set; }
+        public static List<Consumer> Consumers { get; set; }
         
     }
 }

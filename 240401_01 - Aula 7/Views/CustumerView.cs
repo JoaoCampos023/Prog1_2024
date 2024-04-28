@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
+using _240401_01___Aula_7.Models;
+using _240401_01___Aula_7.Repository;
 
 namespace _240401_01___Aula_7.Views
 {
@@ -10,7 +13,33 @@ namespace _240401_01___Aula_7.Views
         public CustumerView()
         {
             this.Init();
+            Console.WriteLine("Digite pelo menos 4 caracteres para buscar clienttes: ");
+            string query = Console.ReadLine();
+
+            ConsumerRepository ConsumerRepository = new ConsumerRepository();
+
+            try
+            {
+                List<Consumer> results = ConsumerRepository.SearchConsumers(query);
+
+                if(results.Count > 0)
+                {
+                    Console.WriteLine("Clientes Encontrados: ");
+                    foreach(var consumer in results)
+                    {
+                        Console.WriteLine($"- {consumer.Name}");
+                    }
+                }else
+                {
+                    Console.WriteLine("Nemhum cliente encontrado.");
+                }
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
 
         public void Init()
         {
@@ -38,6 +67,8 @@ namespace _240401_01___Aula_7.Views
                         case 1:
                         break;
                         case 2:
+                        break;
+                        case 3:
                         break;
                         default:
                             Console.WriteLine("Opção invalida.");
