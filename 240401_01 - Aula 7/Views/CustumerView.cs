@@ -12,9 +12,11 @@ namespace _240401_01___Aula_7.Views
     public class CustumerView
     {
         private CustumerController custumerController;
+        private AddressView addressView;
 
         public CustumerView()
         {
+            addressView = new AddressView();
             custumerController = new CustumerController();
             this.Init();
         }
@@ -93,7 +95,7 @@ namespace _240401_01___Aula_7.Views
                     aux = Convert.ToInt32(Console.ReadLine());
                     if(aux == 1)
                     {
-                        // carga endereço
+                        custumer.Addresses.Add(addressView.Insert());
                     }
                     else if(aux == 0)
                     {
