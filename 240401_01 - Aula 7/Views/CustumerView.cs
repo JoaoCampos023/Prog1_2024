@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using _240401_01___Aula_7.Controllers;
 using _240401_01___Aula_7.Models;
 using _240401_01___Aula_7.Repository;
 
@@ -10,34 +11,14 @@ namespace _240401_01___Aula_7.Views
 {
     public class CustumerView
     {
+        private CustumerController custumerController;
+        private AddressView addressView;
+
         public CustumerView()
         {
+            addressView = new AddressView();
+            custumerController = new CustumerController();
             this.Init();
-            Console.WriteLine("Digite pelo menos 4 caracteres para buscar clienttes: ");
-            string query = Console.ReadLine();
-
-            ConsumerRepository ConsumerRepository = new ConsumerRepository();
-
-            try
-            {
-                List<Consumer> results = ConsumerRepository.SearchConsumers(query);
-
-                if(results.Count > 0)
-                {
-                    Console.WriteLine("Clientes Encontrados: ");
-                    foreach(var consumer in results)
-                    {
-                        Console.WriteLine($"- {consumer.Name}");
-                    }
-                }else
-                {
-                    Console.WriteLine("Nemhum cliente encontrado.");
-                }
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
 
 
@@ -83,6 +64,58 @@ namespace _240401_01___Aula_7.Views
                 }
 
             }while(aux);
+        }
+
+        private void InsertCustumer()
+        {
+            Console.WriteLine("***********************");
+            Console.WriteLine("INSERIR NOVO CONSUMIDOR");
+            Console.WriteLine("***********************");
+
+            Custumer custumer = new Custumer();
+            
+            Console.Write("Nome: ");
+            custumer.Name = Console.ReadLine();
+            Console.WriteLine("");
+            
+            Console.Write("Email: ");
+            custumer.EmailAddress = Console.ReadLine();
+            Console.WriteLine("");
+
+            
+            
+            int aux = 0;
+            do{
+                Console.WriteLine("Deseja informar endereço? ");
+                Console.WriteLine("0 = Não");
+                Console.WriteLine("1 = Sim");
+
+                try
+                {
+                    aux = Convert.ToInt32(Console.ReadLine());
+                    if(aux == 1)
+                    {
+                        custumer.Addresses.Add(addressView.Insert());
+                    }
+                    else if(aux == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        aux = 1;
+                        Console.WriteLine("Opção Invalida.");
+                        Console.WriteLine("Tente Novamente."); 
+                    }
+                }
+                catch
+                {
+                    aux = 1;
+                    Console.WriteLine("Opção Invalida.");
+                    Console.WriteLine("Tente Novamente.");
+                }
+            }while(aux != 0);
+            
         }
     }
 }

@@ -201,3 +201,5 @@ digitados pelo usuario;
 
 --------------------------------------------------------
 
+- CRUD: Create | Read | Update | Delete ; 
+

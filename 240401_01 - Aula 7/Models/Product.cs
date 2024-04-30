@@ -12,19 +12,5 @@ namespace _240401_01___Aula_7.Models
         public string Description { get; set; }
         public float CurrentPrice { get; set; }
 
-        public bool Validate()
-        {
-            return true;
-        }
-
-        public Product Retrieve()
-        {
-            return new Product();
-        }
-
-        public void Save(Product product)
-        {
-            
-        }
     }
 }
