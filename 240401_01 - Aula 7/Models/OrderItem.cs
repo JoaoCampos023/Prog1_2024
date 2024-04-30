@@ -12,19 +12,5 @@ namespace _240401_01___Aula_7.Models
         public double Quantity { get; set; }
         public double PurchasePrice { get; set; }
 
-        public bool Validate()
-        {
-            return true;
-        }
-
-        public OrderItem Retrieve()
-        {
-            return new OrderItem();
-        }
-
-        public void Save(OrderItem orderItem)
-        {
-            
-        }
     }
 }

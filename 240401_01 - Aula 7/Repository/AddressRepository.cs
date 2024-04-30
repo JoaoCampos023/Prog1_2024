@@ -11,7 +11,7 @@ namespace _240401_01___Aula_7.Repository
     {
         public void Save(Address address)
         {
-            
+            address.AddressId = this.GetNextId();
             DataSet.Addresses.Add(address);
         }
 
@@ -25,6 +25,22 @@ namespace _240401_01___Aula_7.Repository
 
             return null;
         }
+
+        public List<Address> Retrieve()
+        {
+            return DataSet.Addresses;
+        }
         
+        private int GetNextId()
+        {
+            int n = 0;
+            foreach(var a in DataSet.Addresses)
+            {
+                if(a.AddressId > n)
+                    n = a.AddressId;
+            }
+
+            return n++;
+        }
     }
 }

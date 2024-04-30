@@ -30,5 +30,17 @@ namespace _240401_01___Aula_7.Repository
         {
             return DataSet.Custumers;
         }
+
+        private int GetNextId()
+        {
+            int n = 0;
+            foreach(var c in DataSet.Custumers)
+            {
+                if(c.CustumerId > n)
+                    n = c.CustumerId;
+            }
+
+            return n++;
+        }
     }
 }
