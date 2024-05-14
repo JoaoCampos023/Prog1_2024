@@ -29,5 +29,10 @@ namespace _240401_01___Aula_7.Controllers
         {
             return custumerRepository.Retrieve();
         }
+
+        public List<Custumer> GetByName(string name)
+        {
+            return custumerRepository.RetrieveByName(name);
+        }
     }
 }

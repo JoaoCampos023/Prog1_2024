@@ -12,6 +12,7 @@ namespace _240401_01___Aula_7.Repository
         
         public void Save(Custumer custumer)
         {
+            custumer.CustumerId = this.GetNextId();
             DataSet.Custumers.Add(custumer);
         }
 
@@ -31,6 +32,20 @@ namespace _240401_01___Aula_7.Repository
             return DataSet.Custumers;
         }
 
+        public List<Custumer> RetrieveByName(string name)
+        {
+            List<Custumer> retorno = new List<Custumer>();
+            foreach(var c in DataSet.Custumers)
+            {
+                if(c.Name.Contains(name))
+                {
+                    retorno.Add(c);
+                }
+            }
+
+            return retorno;
+        }
+
         private int GetNextId()
         {
             int n = 0;
@@ -40,7 +55,7 @@ namespace _240401_01___Aula_7.Repository
                     n = c.CustumerId;
             }
 
-            return n++;
+            return ++n;
         }
     }
 }

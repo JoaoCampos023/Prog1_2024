@@ -24,6 +24,7 @@ namespace _240401_01___Aula_7.Views
 
         public void Init()
         {
+            Console.WriteLine("*************");
             Console.WriteLine("MENU CUSTUMER");
             Console.WriteLine("*************");
             Console.WriteLine();
@@ -46,10 +47,13 @@ namespace _240401_01___Aula_7.Views
                             aux = false;
                         break;
                         case 1:
+                            InsertCustumer();
                         break;
                         case 2:
+                            SearchCustumer();
                         break;
                         case 3:
+                            ListCustumer();
                         break;
                         default:
                             Console.WriteLine("Opção invalida.");
@@ -115,7 +119,112 @@ namespace _240401_01___Aula_7.Views
                     Console.WriteLine("Tente Novamente.");
                 }
             }while(aux != 0);
+
+            try
+            {
+                custumerController.Insert(custumer);
+                Console.WriteLine("Custumer inserido com sucesso!");  
+            }
+            catch
+            {
+                Console.WriteLine("Ops! Ocorreu um erro. ");
+            }
+
             
+        }
+
+        private void SearchCustumer()
+        {
+
+            int aux = -1;
+
+            do{
+                Console.WriteLine("PESQUISAR CLIENTE");
+                Console.WriteLine("*****************");
+                Console.WriteLine(" 1 - Buscar por Id");
+                Console.WriteLine(" 2 - Buscar por Nome");
+                Console.WriteLine(" 0 - Sair");
+
+                aux = Convert.ToInt16(Console.ReadLine());
+            
+                switch(aux)
+                {
+                    case 1:
+                        Console.WriteLine("Informe o Id: ");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        ShowCustumerById(id);
+                    break;
+                    case 2:
+                        Console.WriteLine("Informe o Nome: ");
+                        string name = Console.ReadLine();
+                        ShowCustumerByName(name);                    
+                    break;
+                    
+                    case 0:
+
+                    break;
+
+                    default:
+                        aux = -1;
+                        Console.WriteLine("Opção Invalida");
+                    break;
+                }
+            }while(aux != 0);
+        }
+
+        private void ShowCustumerById(int id)
+        {
+            Custumer c = custumerController.Get(id);
+            if(c != null)
+            {
+                Console.WriteLine(c.ToString());
+            }
+            else
+            {
+                Console.WriteLine($"Consumidor de id {id} não encontrado");
+            }
+        }
+
+        private void ShowCustumerByName(string name)
+        {
+            List<Custumer>result = custumerController.GetByName(name);
+            if(result == null)
+            {
+                Console.WriteLine("Não Encontrado");
+                return;
+            }
+
+            if(result.Count == 0)
+            {
+                Console.WriteLine("Não Encontrado");
+                return;                
+            }
+
+            foreach(Custumer custumer in result)
+            {
+                Console.WriteLine(custumer.ToString());
+            }
+        }
+
+        private void ListCustumer()
+        {
+            List<Custumer>result = custumerController.Get();
+            if(result == null)
+            {
+                Console.WriteLine("Não Encontrado");
+                return;
+            }
+
+            if(result.Count == 0)
+            {
+                Console.WriteLine("Não Encontrado");
+                return;                
+            }
+
+            foreach(Custumer custumer in result)
+            {
+                Console.WriteLine(custumer.ToString());
+            }            
         }
     }
 }
