@@ -12,5 +12,10 @@ namespace _240401_01___Aula_7.Models
         public string EmailAddress { get; set; }
         public List<Address> Addresses { get; set; } = new List<Address>();
 
+        public override string ToString()
+        {
+            return $"{CustumerId} - {Name} - {EmailAddress}";
+        }
+
     }
 }

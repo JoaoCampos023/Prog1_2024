@@ -203,3 +203,8 @@ digitados pelo usuario;
 
 - CRUD: Create | Read | Update | Delete ; 
 
+
+---------------------------------------------------------
+
+- Implementar o Delet no code.
+
