@@ -35,6 +35,7 @@ namespace _240401_01___Aula_7.Views
                 Console.WriteLine("1 - Inserir Consumidor");
                 Console.WriteLine("2 - Pesquisar Consumidor");
                 Console.WriteLine("3 - Listar Consumidor");
+                Console.WriteLine("4 - Deletar Consumidor");
                 Console.WriteLine("0 - Sair");
 
                 int menu = 0;
@@ -54,6 +55,9 @@ namespace _240401_01___Aula_7.Views
                         break;
                         case 3:
                             ListCustumer();
+                        break;
+                        case 4:
+                            DeleteCustumer();
                         break;
                         default:
                             Console.WriteLine("Opção invalida.");
@@ -129,8 +133,6 @@ namespace _240401_01___Aula_7.Views
             {
                 Console.WriteLine("Ops! Ocorreu um erro. ");
             }
-
-            
         }
 
         private void SearchCustumer()
@@ -225,6 +227,33 @@ namespace _240401_01___Aula_7.Views
             {
                 Console.WriteLine(custumer.ToString());
             }            
+        }
+
+        private void DeleteCustumer()
+        {
+            Console.WriteLine("*********************");
+            Console.WriteLine("DELETAR CONSUMIDOR");
+            Console.WriteLine("*********************");
+
+            Console.Write("Informe o Id do Consumidor: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                bool suceess = custumerController.Delete(id);
+                if(suceess)
+                {
+                    Console.WriteLine("Consumidor deletado com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine($"Consumidor de id {id} não encontrado.");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Ops! Ocorreu um erro.");
+            }
         }
     }
 }

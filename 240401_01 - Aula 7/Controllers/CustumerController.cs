@@ -34,5 +34,16 @@ namespace _240401_01___Aula_7.Controllers
         {
             return custumerRepository.RetrieveByName(name);
         }
+
+        public bool Delete(int id)
+        {
+            var custumer = Get(id);
+            if(custumer != null)
+            {
+                custumers.Remove(custumer);
+                return true;
+            }
+            return false;
+        }
     }
 }
