@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using _240401_01___Aula_7.Models;
 using _240401_01___Aula_7.Repository;
+using _240401_01___Aula_7.Utils;
+
 
 namespace _240401_01___Aula_7.Controllers
 {
@@ -18,6 +20,11 @@ namespace _240401_01___Aula_7.Controllers
         public void Insert(Custumer custumer)
         {
             custumerRepository.Save(custumer);
+        }
+
+        public void Delete(Custumer custumer)
+        {
+            custumerRepository.Delete(custumer);
         }
 
         public Custumer Get(int id)
@@ -35,15 +42,20 @@ namespace _240401_01___Aula_7.Controllers
             return custumerRepository.RetrieveByName(name);
         }
 
-        public bool Delete(int id)
+        public bool ExportToDelimited()
         {
-            var custumer = Get(id);
-            if(custumer != null)
+            List<Custumer> list = custumerRepository.Retrieve();
+
+            string fileContent = string.Empty;
+            foreach(var c in list)
             {
-                custumers.Remove(custumer);
-                return true;
+                fileContent += $"{c.PrintToExportDelimited()}\n";
             }
-            return false;
+
+            string fileName = $"Custumer_{DateTimeOffset.Now.ToUnixTimeSeconds()}.txt";
+
+            return ExportToFile.SaveToDelimitedTxt(fileName, fileContent);
         }
+
     }
 }

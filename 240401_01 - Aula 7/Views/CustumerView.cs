@@ -36,6 +36,7 @@ namespace _240401_01___Aula_7.Views
                 Console.WriteLine("2 - Pesquisar Consumidor");
                 Console.WriteLine("3 - Listar Consumidor");
                 Console.WriteLine("4 - Deletar Consumidor");
+                Console.WriteLine("5 - Exportar Delimitado");
                 Console.WriteLine("0 - Sair");
 
                 int menu = 0;
@@ -58,6 +59,24 @@ namespace _240401_01___Aula_7.Views
                         break;
                         case 4:
                             DeleteCustumer();
+                        break;
+                        case 5:
+                        {
+                            if(custumerController.ExportToDelimited())
+                            {
+                                Console.WriteLine("");
+                                Console.WriteLine("Exportado com Sucesso!");
+                                Console.WriteLine("");
+                            }
+                            else
+                            {
+                                Console.WriteLine("");
+                                Console.WriteLine("Falha ao Exportar!");
+                                Console.WriteLine("");                                
+                            }
+                            
+
+                        }
                         break;
                         default:
                             Console.WriteLine("Opção invalida.");
@@ -139,6 +158,7 @@ namespace _240401_01___Aula_7.Views
         {
 
             int aux = -1;
+            int id = -1;
 
             do{
                 Console.WriteLine("PESQUISAR CLIENTE");
@@ -153,13 +173,17 @@ namespace _240401_01___Aula_7.Views
                 {
                     case 1:
                         Console.WriteLine("Informe o Id: ");
-                        int id = Convert.ToInt32(Console.ReadLine());
+                        id = Convert.ToInt32(Console.ReadLine());
                         ShowCustumerById(id);
+
+
                     break;
                     case 2:
                         Console.WriteLine("Informe o Nome: ");
                         string name = Console.ReadLine();
-                        ShowCustumerByName(name);                    
+                        ShowCustumerByName(name);  
+                        Console.WriteLine("Informe o Id: ");
+                        id = Convert.ToInt32(Console.ReadLine());              
                     break;
                     
                     case 0:
@@ -171,6 +195,9 @@ namespace _240401_01___Aula_7.Views
                         Console.WriteLine("Opção Invalida");
                     break;
                 }
+
+                // custumerController.Delete(CustumerId);
+
             }while(aux != 0);
         }
 
@@ -238,9 +265,9 @@ namespace _240401_01___Aula_7.Views
             Console.Write("Informe o Id do Consumidor: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
-            try
+            /*try
             {
-                bool suceess = custumerController.Delete(id);
+                bool suceess = custumerController.Delete(CustumerId);
                 if(suceess)
                 {
                     Console.WriteLine("Consumidor deletado com sucesso!");
@@ -253,7 +280,7 @@ namespace _240401_01___Aula_7.Views
             catch
             {
                 Console.WriteLine("Ops! Ocorreu um erro.");
-            }
+            }*/
         }
     }
 }

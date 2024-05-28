@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1rR2UT2hAR3Bhw8BFvzrnEU7UEPJE0VwUJEmrJTFtZlNJYaFPE6lhHnjD3rtw2U/aX5155lKHL61QSlG8Bidrw==",
+  "dgSpecHash": "wt8imgqsB6EugQOoVOc+BlnK2fCOXrId/Q/cVICQzYpQkGdiqVYOHKdhtymWGsEdvnnsWYaY4zKa0EDn3etxRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaov\\OneDrive\\Documentos\\Programação 2024\\Exercicios\\240401_01 - Aula 7\\240401_01 - Aula 7.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\424072\\Documents\\Programação 2024\\Exercicios\\240401_01 - Aula 7\\240401_01 - Aula 7.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\424072\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\424072\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\424072\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\424072\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.16\\microsoft.netcore.app.host.win-x64.7.0.16.nupkg.sha512"
+  ],
   "logs": []
 }
