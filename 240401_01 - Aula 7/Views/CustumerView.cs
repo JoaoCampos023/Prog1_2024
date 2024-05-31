@@ -262,25 +262,48 @@ namespace _240401_01___Aula_7.Views
             Console.WriteLine("DELETAR CONSUMIDOR");
             Console.WriteLine("*********************");
 
-            Console.Write("Informe o Id do Consumidor: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id;
+            do
+            {
+                try
+                {
+                    Console.Write("Informe o Id do Consumidor: ");
+                    id = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Valor inserido Invalido! ");
+                    id = -1;
+                }
+            }while(id == -1);
 
-            /*try
+            ShowCustumerById(id);
+            Custumer c = custumerController.Get(id);
+
+            Console.WriteLine("Deseja remover o consumidor acima? ");
+
+            int aux;
+            do
             {
-                bool suceess = custumerController.Delete(CustumerId);
-                if(suceess)
+                try
                 {
-                    Console.WriteLine("Consumidor deletado com sucesso!");
+                    Console.WriteLine("1 - Sim ");
+                    Console.WriteLine("2 - Não ");
+                    aux = Convert.ToInt32(Console.ReadLine());
                 }
-                else
+                catch
                 {
-                    Console.WriteLine($"Consumidor de id {id} não encontrado.");
+                    Console.WriteLine("Valor inserido Invalido!");
+                    aux = -1;
                 }
+            }while (aux == -1);
+
+            if(aux == 1)
+            {
+                custumerController.Remove(c);
             }
-            catch
-            {
-                Console.WriteLine("Ops! Ocorreu um erro.");
-            }*/
+
+            Console.WriteLine("Consumidor Removido com Sucesso!");
         }
     }
 }
