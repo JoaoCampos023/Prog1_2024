@@ -9,7 +9,7 @@ namespace _240401_01___Aula_7.Utils
 {
     public class ExportToFile
     {
-        private const string dir = @"C:\Users\424072\Documents\Programação 2024\Exercicios\Arquivos";
+        private const string dir = @"C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\Arquivos";
         public static bool SaveToDelimitedTxt(string fileName, string fileContent)
         {
             string filePath = $@"{dir}\{fileName}";

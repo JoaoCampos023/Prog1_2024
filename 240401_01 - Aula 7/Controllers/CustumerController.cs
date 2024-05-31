@@ -22,7 +22,7 @@ namespace _240401_01___Aula_7.Controllers
             custumerRepository.Save(custumer);
         }
 
-        public void Delete(Custumer custumer)
+        public void Remove(Custumer custumer)
         {
             custumerRepository.Delete(custumer);
         }
