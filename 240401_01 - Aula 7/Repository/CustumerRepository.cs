@@ -27,6 +27,11 @@ namespace _240401_01___Aula_7.Repository
             return null;
         }
 
+        public void Delete(Custumer custumer)
+        {
+            DataSet.Custumers.Remove(custumer);
+        }
+
         public List<Custumer> Retrieve()
         {
             return DataSet.Custumers;

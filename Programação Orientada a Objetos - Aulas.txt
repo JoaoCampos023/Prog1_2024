@@ -208,3 +208,21 @@ digitados pelo usuario;
 
 - Implementar o Delet no code.
 
+---------------------------------------------------------
+
+TXT -> Texto;
+
+XML -> Extensible Markup Language;
+
+JSON -> JavaScript Object Notation;
+
+---------------------------------------------------------
+
+Delimitado - O delimitador é [ ; ] ;
+
+Tamanho Fixo - É utilizado para boletos e notas ;
+
+---------------------------------------------------------
+
+Formatação de Composição de C#
+
