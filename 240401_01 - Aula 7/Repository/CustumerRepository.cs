@@ -9,12 +9,21 @@ namespace _240401_01___Aula_7.Repository
 {
     public class CustumerRepository
     {
-        
+        /*
         public void Save(Custumer custumer)
         {
             custumer.CustumerId = this.GetNextId();
             DataSet.Custumers.Add(custumer);
+        }*/
+
+        public void Save(Custumer custumer, bool autoGenerateId = true)
+        {
+            if(autoGenerateId)
+                custumer.CustumerId = this.GetNextId();
+            
+            DataSet.Custumers.Add(custumer);
         }
+
 
         public Custumer Retrieve(int id)
         {
@@ -49,6 +58,28 @@ namespace _240401_01___Aula_7.Repository
             }
 
             return retorno;
+        }
+
+        public bool ImportFromTxt(string line, string delimiter)
+        {
+            if(string.IsNullOrWhiteSpace(line))
+                return false;
+
+            string[] data = line.Split(delimiter);
+            
+            if(data.Count() < 1)
+                return false;
+
+            Custumer c = new Custumer{
+                CustumerId = Convert.ToInt32((data[0] == null ? 0 : data[0])),
+                Name = (data[1] == null ? string.Empty : data[1]),
+                EmailAddress = (data[2] == null ? string.Empty : data[2])
+            };
+
+            // Entre chaves = é um hack para encurtação de codigo em C#.
+
+            Save(c, false);
+            return true;
         }
 
         private int GetNextId()

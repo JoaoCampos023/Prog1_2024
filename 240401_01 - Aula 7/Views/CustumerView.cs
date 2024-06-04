@@ -36,7 +36,8 @@ namespace _240401_01___Aula_7.Views
                 Console.WriteLine("2 - Pesquisar Consumidor");
                 Console.WriteLine("3 - Listar Consumidor");
                 Console.WriteLine("4 - Deletar Consumidor");
-                Console.WriteLine("5 - Exportar Delimitado");
+                Console.WriteLine("5 - Exportar Dados Delimitados");
+                Console.WriteLine("6 - Importar Dados Delimitados");
                 Console.WriteLine("0 - Sair");
 
                 int menu = 0;
@@ -74,9 +75,10 @@ namespace _240401_01___Aula_7.Views
                                 Console.WriteLine("Falha ao Exportar!");
                                 Console.WriteLine("");                                
                             }
-                            
-
                         }
+                        break;
+                        case 6:
+                            ImportFromDelimited();
                         break;
                         default:
                             Console.WriteLine("Opção invalida.");
@@ -91,6 +93,19 @@ namespace _240401_01___Aula_7.Views
                 }
 
             }while(aux);
+        }
+
+        private void ImportFromDelimited()
+        {
+            Console.WriteLine("Informe o caminho do arquivo:");
+            string pathFile = Console.ReadLine();
+
+            Console.WriteLine("Informe o caracter delimitador:");
+            string delimiter = Console.ReadLine();
+
+            string response = custumerController.ImportFromDelimited(pathFile, delimiter);
+
+            Console.WriteLine(response);
         }
 
         private void InsertCustumer()

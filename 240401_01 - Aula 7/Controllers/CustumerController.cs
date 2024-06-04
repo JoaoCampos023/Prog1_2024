@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Xml;
 using _240401_01___Aula_7.Models;
 using _240401_01___Aula_7.Repository;
 using _240401_01___Aula_7.Utils;
@@ -55,6 +56,56 @@ namespace _240401_01___Aula_7.Controllers
             string fileName = $"Custumer_{DateTimeOffset.Now.ToUnixTimeSeconds()}.txt";
 
             return ExportToFile.SaveToDelimitedTxt(fileName, fileContent);
+        }
+
+        public string ImportFromDelimited(string filePath, string delimiter)
+        {
+            bool result = true;
+            string msgReturn = string.Empty;
+            int lineCountSuccess = 0;
+            int lineCountError = 0;
+            int lineCountTotal = 0;
+
+            try
+            {
+                if(!File.Exists(filePath))
+                    return "ERRO: Arquivo de importação não encontrado.";
+
+                using(StreamReader sr = new StreamReader(filePath))
+                {
+                    string line = string.Empty;
+                    while((line = sr.ReadLine()) != null)
+                    {
+                        lineCountTotal++;
+
+                        if(!custumerRepository.ImportFromTxt(line, delimiter))
+                        {
+                            result = false;
+                            lineCountError++;
+                        }
+                        else
+                        {
+                            lineCountSuccess++;
+                        }
+                    }
+                }
+            }
+            catch(System.Exception ex)
+            {
+                return $"ERRO: {ex.Message}";
+            }
+
+            if(result)
+                msgReturn = "Dados Importados com Sucesso.";
+            else
+                msgReturn = "Dados parcialmente importados.";
+
+            
+            msgReturn += $"\nTotal de linhas: {lineCountTotal}";
+            msgReturn += $"\nSucesso: {lineCountSuccess}";
+            msgReturn += $"\nErro: {lineCountError}";
+
+            return msgReturn;
         }
 
     }
