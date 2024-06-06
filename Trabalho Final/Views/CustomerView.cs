@@ -1,31 +1,31 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
-using _240401_01___Aula_7.Controllers;
-using _240401_01___Aula_7.Models;
-using _240401_01___Aula_7.Repository;
+using Trabalho_Final.Models;
+using Trabalho_Final.Repository;
+using Trabalho_Final.Controllers;
 
-namespace _240401_01___Aula_7.Views
+
+namespace Trabalho_Final.Views
 {
-    public class CustumerView
+    public class CustomerView
     {
-        private CustumerController custumerController;
+        private CustomerController customerController;
         private AddressView addressView;
 
-        public CustumerView()
+        public CustomerView()
         {
             addressView = new AddressView();
-            custumerController = new CustumerController();
+            customerController = new CustomerController();
             this.Init();
         }
         
         public void Init()
         {
-            Console.WriteLine("*************");
-            Console.WriteLine("MENU CUSTUMER");
-            Console.WriteLine("*************");
+            Console.WriteLine("********************");
+            Console.WriteLine(" MENU DO CONSUMIDOR ");
+            Console.WriteLine("********************");
             Console.WriteLine();
 
             bool aux = true;
@@ -48,20 +48,20 @@ namespace _240401_01___Aula_7.Views
                             aux = false;
                         break;
                         case 1:
-                            InsertCustumer();
+                            InsertCustomer();
                         break;
                         case 2:
-                            SearchCustumer();
+                            SearchCustomer();
                         break;
                         case 3:
-                            ListCustumer();
+                            ListCustomer();
                         break;
                         case 4:
-                            DeleteCustumer();
+                            DeleteCustomer();
                         break;
                         case 5:
                         {
-                            if(custumerController.ExportToDelimited())
+                            if(customerController.ExportToDelimited())
                             {
                                 Console.WriteLine("");
                                 Console.WriteLine("Exportado com Sucesso!");
@@ -92,20 +92,20 @@ namespace _240401_01___Aula_7.Views
             }while(aux);
         }
 
-        private void InsertCustumer()
+        private void InsertCustomer()
         {
             Console.WriteLine("***********************");
             Console.WriteLine("INSERIR NOVO CONSUMIDOR");
             Console.WriteLine("***********************");
 
-            Custumer custumer = new Custumer();
+            Customer customer = new Customer();
             
             Console.Write("Nome: ");
-            custumer.Name = Console.ReadLine();
+            customer.Name = Console.ReadLine();
             Console.WriteLine("");
             
             Console.Write("Email: ");
-            custumer.EmailAddress = Console.ReadLine();
+            customer.EmailAddress = Console.ReadLine();
             Console.WriteLine("");
 
             
@@ -121,7 +121,7 @@ namespace _240401_01___Aula_7.Views
                     aux = Convert.ToInt32(Console.ReadLine());
                     if(aux == 1)
                     {
-                        custumer.Addresses.Add(addressView.Insert());
+                        customer.Addresses.Add(addressView.Insert());
                     }
                     else if(aux == 0)
                     {
@@ -144,7 +144,7 @@ namespace _240401_01___Aula_7.Views
 
             try
             {
-                custumerController.Insert(custumer);
+                customerController.Insert(customer);
                 Console.WriteLine("Custumer inserido com sucesso!");  
             }
             catch
@@ -153,7 +153,7 @@ namespace _240401_01___Aula_7.Views
             }
         }
 
-        private void SearchCustumer()
+        private void SearchCustomer()
         {
 
             int aux = -1;
@@ -173,14 +173,14 @@ namespace _240401_01___Aula_7.Views
                     case 1:
                         Console.WriteLine("Informe o Id: ");
                         id = Convert.ToInt32(Console.ReadLine());
-                        ShowCustumerById(id);
+                        ShowCustomerById(id);
 
 
                     break;
                     case 2:
                         Console.WriteLine("Informe o Nome: ");
                         string name = Console.ReadLine();
-                        ShowCustumerByName(name);  
+                        ShowCustomerByName(name);  
                         Console.WriteLine("Informe o Id: ");
                         id = Convert.ToInt32(Console.ReadLine());              
                     break;
@@ -195,14 +195,12 @@ namespace _240401_01___Aula_7.Views
                     break;
                 }
 
-                // custumerController.Delete(CustumerId);
-
             }while(aux != 0);
         }
 
-        private void ShowCustumerById(int id)
+        private void ShowCustomerById(int id)
         {
-            Custumer c = custumerController.Get(id);
+            Customer c = customerController.Get(id);
             if(c != null)
             {
                 Console.WriteLine(c.ToString());
@@ -213,9 +211,9 @@ namespace _240401_01___Aula_7.Views
             }
         }
 
-        private void ShowCustumerByName(string name)
+        private void ShowCustomerByName(string name)
         {
-            List<Custumer>result = custumerController.GetByName(name);
+            List<Customer>result = customerController.GetByName(name);
             if(result == null)
             {
                 Console.WriteLine("Não Encontrado");
@@ -228,15 +226,15 @@ namespace _240401_01___Aula_7.Views
                 return;                
             }
 
-            foreach(Custumer custumer in result)
+            foreach(Customer customer in result)
             {
-                Console.WriteLine(custumer.ToString());
+                Console.WriteLine(customer.ToString());
             }
         }
 
-        private void ListCustumer()
+        private void ListCustomer()
         {
-            List<Custumer>result = custumerController.Get();
+            List<Customer>result = customerController.Get();
             if(result == null)
             {
                 Console.WriteLine("Não Encontrado");
@@ -249,17 +247,17 @@ namespace _240401_01___Aula_7.Views
                 return;                
             }
 
-            foreach(Custumer custumer in result)
+            foreach(Customer customer in result)
             {
-                Console.WriteLine(custumer.ToString());
+                Console.WriteLine(customer.ToString());
             }            
         }
 
-        private void DeleteCustumer()
+        private void DeleteCustomer()
         {
-            Console.WriteLine("*********************");
+            Console.WriteLine("******************");
             Console.WriteLine("DELETAR CONSUMIDOR");
-            Console.WriteLine("*********************");
+            Console.WriteLine("******************");
 
             int id;
             do
@@ -276,8 +274,8 @@ namespace _240401_01___Aula_7.Views
                 }
             }while(id == -1);
 
-            ShowCustumerById(id);
-            Custumer c = custumerController.Get(id);
+            ShowCustomerById(id);
+            Customer c = customerController.Get(id);
 
             Console.WriteLine("Deseja remover o consumidor acima? ");
 
@@ -299,7 +297,7 @@ namespace _240401_01___Aula_7.Views
 
             if(aux == 1)
             {
-                custumerController.Remove(c);
+                customerController.Remove(c);
             }
 
             Console.WriteLine("Consumidor Removido com Sucesso!");
