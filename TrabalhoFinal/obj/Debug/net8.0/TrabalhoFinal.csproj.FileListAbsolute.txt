@@ -1,0 +1,5 @@
+C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\TrabalhoFinal\obj\Debug\net8.0\TrabalhoFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\TrabalhoFinal\obj\Debug\net8.0\TrabalhoFinal.AssemblyInfoInputs.cache
+C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\TrabalhoFinal\obj\Debug\net8.0\TrabalhoFinal.AssemblyInfo.cs
+C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\TrabalhoFinal\obj\Debug\net8.0\TrabalhoFinal.csproj.CoreCompileInputs.cache
+C:\Users\joaov\OneDrive\Documentos\Programação 2024\Exercicios\TrabalhoFinal\obj\Debug\net8.0\TrabalhoFinal.sourcelink.json

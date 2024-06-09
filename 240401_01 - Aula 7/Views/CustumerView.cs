@@ -211,8 +211,6 @@ namespace _240401_01___Aula_7.Views
                     break;
                 }
 
-                // custumerController.Delete(CustumerId);
-
             }while(aux != 0);
         }
 
