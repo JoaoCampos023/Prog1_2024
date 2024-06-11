@@ -28,5 +28,7 @@ namespace TrabalhoFinal.Models
         {
             return $"{Rua}, {Numero} - {Bairro}, {Cidade} - {Estado}, CEP: {CEP}";
         }
+
+        public Customer Customer { get; set; }
     }
 }

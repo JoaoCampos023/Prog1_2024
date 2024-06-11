@@ -10,16 +10,23 @@ namespace TrabalhoFinal.View
 {
     public class RestauranteView
     {
-        private RestauranteController controller;
+        private RestauranteController restauranteController;
 
-        public RestauranteView(RestauranteController controller)
+        public RestauranteView()
         {
-            this.controller = controller;
+            restauranteController = new RestauranteController();
+            this.Init();
         }
 
-        public void MostrarMenu()
+        public void Init()
         {
-            while(true)
+            Console.WriteLine("****************");
+            Console.WriteLine("MENU RESTAURANTE");
+            Console.WriteLine("****************");
+            Console.WriteLine();
+
+            bool aux = true;
+            do
             {
                 Console.WriteLine("\nSistema de Gerenciamento de Restaurante");
                 Console.WriteLine("1 - Inserir Prato");
@@ -27,34 +34,44 @@ namespace TrabalhoFinal.View
                 Console.WriteLine("3 - Buscar Prato");
                 Console.WriteLine("4 - Listar Pratos");
                 Console.WriteLine("5 - Registrar Pedido");
-                Console.WriteLine("6 - Sair");
+                Console.WriteLine("0 - Sair");
                 Console.WriteLine("Escolha uma opção:");
 
-                string opcao = Console.ReadLine();
-                switch(opcao)
+                int menu = 0;
+
+                try
                 {
-                    case 1:
-                        InserirPrato();
-                    break;
-                    case 2:
-                        RemoverPrato();
-                    break;
-                    case 3:
-                        BuscarPrato();
-                    break;
-                    case 4:
-                        ListarPrato();
-                    break;
-                    case 5:
-                        RegistrarPedido();
-                    break;
-                    case 6:
-                        return;
-                    default:
-                        Console.WriteLine("Opção Invalida.");
-                    break;
+                    menu = Convert.ToInt32(Console.ReadLine());
+                    switch(menu)
+                    {
+                        case 1:
+                            InserirPrato();
+                        break;
+                        case 2:
+                            RemoverPrato();
+                        break;
+                        case 3:
+                            BuscarPrato();
+                        break;
+                        case 4:
+                            ListarPrato();
+                        break;
+                        case 5:
+                            RegistrarPedido();
+                        break;
+                        case 0:
+                            return;
+                        default:
+                            Console.WriteLine("Opção Invalida.");
+                        break;
+                    }                    
                 }
-            }
+                catch
+                {
+                    Console.WriteLine("Opção invalida.");
+                    menu = -1;
+                }
+            }while(aux);
         }
 
         private void InserirPrato()
@@ -67,7 +84,7 @@ namespace TrabalhoFinal.View
             decimal preco;
             if(decimal.TryParse(Console.ReadLine(), out preco) && preco > 0)
             {
-                controller.InserirPrato(nome, descricao, preco);
+                restauranteController.InserirPrato(nome, descricao, preco);
             }
             else
             {
@@ -79,14 +96,14 @@ namespace TrabalhoFinal.View
         {
             Console.WriteLine("Nome do prato a remover:");
             string nomeARemover = Console.ReadLine();
-            controller.RemoverPrato(nomeARemover);
+            restauranteController.RemoverPrato(nomeARemover);
         }
 
         private void BuscarPrato()
         {
             Console.WriteLine("Digite o nome ou descrição do prato para buscar:");
             string termoBusca = Console.ReadLine();
-            Prato prato = controller.BuscarPrato(termoBusca);
+            Prato prato = restauranteController.BuscarPrato(termoBusca);
             if(prato != null)
             {
                 Console.WriteLine(prato);
@@ -99,7 +116,7 @@ namespace TrabalhoFinal.View
 
         private void ListarPrato()
         {
-            List<Prato> pratos = controller.ListarPratos();
+            List<Prato> pratos = restauranteController.ListarPratos();
             if(pratos.Count > 0)
             {
                 foreach(var prato in pratos)
@@ -136,7 +153,7 @@ namespace TrabalhoFinal.View
             Endereco endereco = new Endereco(rua, numero, bairro, cidade, estado, cep);
             Customer customer = new Customer(nomeCustomer, telefoneCustomer, endereco);
 
-            Pedido pedido = controller.RegistrarPedido(customer);
+            Pedido pedido = restauranteController.RegistrarPedido(customer);
 
             while(true)
             {
@@ -147,7 +164,7 @@ namespace TrabalhoFinal.View
                     break;
                 }
 
-                Prato prato = controller.BuscarPrato(nomePrato);
+                Prato prato = restauranteController.BuscarPrato(nomePrato);
                 if(prato != null)
                 {
                     Console.WriteLine("Digite a quantidade: ");
