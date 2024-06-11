@@ -10,6 +10,7 @@ namespace TrabalhoFinal.Models
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public Endereco Endereco { get; set; }
+        public List<Endereco> Enderecos { get; set; } = new List<Endereco>();
 
         public  Customer (string nome, string telefone, Endereco endereco)
         {

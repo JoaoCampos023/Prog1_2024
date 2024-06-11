@@ -13,9 +13,9 @@ namespace TrabalhoFinal.Controller
         private IRepositorio<Prato> pratoRepository;
         private List<Pedido> pedidos;
 
-        public RestauranteController(IRepositorio<Prato> pratoRepository)
+        public RestauranteController()
         {
-            this.pratoRepository = pratoRepository;
+            pratoRepository = new PratoRepository();
             pedidos = new List<Pedido>();
         }
 
@@ -32,7 +32,7 @@ namespace TrabalhoFinal.Controller
 
         public Prato BuscarPrato(string termo)
         {
-            pratoRepository.Buscar(termo);
+            return pratoRepository.Buscar(termo);
         }
 
         public List<Prato> ListarPratos()
