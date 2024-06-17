@@ -77,14 +77,16 @@ namespace TrabalhoFinal.View
         private void InserirPrato()
         {
             Console.WriteLine("Nome do Prato: ");
-            string nome = Console.ReadLine();
+            string? nome = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("Descrição do Prato: ");
-            string descricao = Console.ReadLine();
+            string? descricao = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("Preço do Prato: ");
             decimal preco;
             if(decimal.TryParse(Console.ReadLine(), out preco) && preco > 0)
             {
-                restauranteController.InserirPrato(nome, descricao, preco);
+                restauranteController.InserirPrato(nome!, descricao!, preco);
             }
             else
             {
@@ -95,15 +97,16 @@ namespace TrabalhoFinal.View
         private void RemoverPrato()
         {
             Console.WriteLine("Nome do prato a remover:");
-            string nomeARemover = Console.ReadLine();
-            restauranteController.RemoverPrato(nomeARemover);
+            string? nomeARemover = Console.ReadLine();
+            restauranteController.RemoverPrato(nomeARemover!);
+            Console.WriteLine();
         }
 
         private void BuscarPrato()
         {
             Console.WriteLine("Digite o nome ou descrição do prato para buscar:");
-            string termoBusca = Console.ReadLine();
-            Prato prato = restauranteController.BuscarPrato(termoBusca);
+            string? termoBusca = Console.ReadLine();
+            Prato prato = restauranteController.BuscarPrato(termoBusca!);
             if(prato != null)
             {
                 Console.WriteLine(prato);
@@ -133,33 +136,46 @@ namespace TrabalhoFinal.View
         private void RegistrarPedido()
         {
             Console.WriteLine("Nome do consumidor:");
-            string nomeCustomer = Console.ReadLine();
+            string? nomeCustomer = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("Telefone do consumidor:");
-            string telefoneCustomer = Console.ReadLine();
+            string? telefoneCustomer = Console.ReadLine();
+            Console.WriteLine();
                         
             Console.WriteLine("Rua:");
-            string rua = Console.ReadLine();
-            Console.WriteLine("Número:");
-            string numero = Console.ReadLine();
-            Console.WriteLine("Bairro:");
-            string bairro = Console.ReadLine();
-            Console.WriteLine("Cidade:");
-            string cidade = Console.ReadLine();
-            Console.WriteLine("Estado:");
-            string estado = Console.ReadLine();
-            Console.WriteLine("CEP:");
-            string cep = Console.ReadLine(); 
+            string? rua = Console.ReadLine();
+            Console.WriteLine();
 
-            Endereco endereco = new Endereco(rua, numero, bairro, cidade, estado, cep);
-            Customer customer = new Customer(nomeCustomer, telefoneCustomer, endereco);
+            Console.WriteLine("Número:");
+            string? numero = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Bairro:");
+            string? bairro = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Cidade:");
+            string? cidade = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Estado:");
+            string? estado = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("CEP:");
+            string? cep = Console.ReadLine();
+            Console.WriteLine();
+
+            Endereco endereco = new Endereco(rua!, numero!, bairro!, cidade!, estado!, cep!);
+            Customer customer = new Customer(nomeCustomer!, telefoneCustomer!, endereco);
 
             Pedido pedido = restauranteController.RegistrarPedido(customer);
 
             while(true)
             {
                 Console.WriteLine("Digite o nome do prato para adicionar ao pedido (ou 'sair' para finalizar):");
-                string nomePrato = Console.ReadLine();
-                if(nomePrato.ToLower() == "sair")
+                string? nomePrato = Console.ReadLine();
+                if(nomePrato!.ToLower() == "sair")
                 {
                     break;
                 }

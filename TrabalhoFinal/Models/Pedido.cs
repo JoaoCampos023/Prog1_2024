@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace TrabalhoFinal.Models
 {
     public class Pedido
@@ -39,8 +34,10 @@ namespace TrabalhoFinal.Models
             string detalhes = $"Pedido de {Customer}:\n";
             for (int i = 0; i < Pratos.Count; i++)
             {
+
                 detalhes += $"{Pratos[i].Nome} x{Quantidades[i]}: {Pratos[i].Preco * Quantidades[i]:C}\n";
             }
+            Console.WriteLine("\n");
             detalhes += $"Total: {CalcularTotal():C}";
             return detalhes;
         }

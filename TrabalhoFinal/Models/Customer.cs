@@ -21,7 +21,7 @@ namespace TrabalhoFinal.Models
 
         public override string ToString()
         {
-            return $"Nome: {Nome}, Telefone: {Telefone}, Endereço: {Endereco}";
+            return $"Nome: {Nome},\n Telefone: {Telefone},\n Endereço: {Endereco}";
         }
     }
 }
